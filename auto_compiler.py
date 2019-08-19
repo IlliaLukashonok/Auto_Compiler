@@ -38,10 +38,10 @@ while i:
     file.close() # Close file
     if version != prev_version: # Checking for changes
         try: # Safety device if there is not this dir
-            os.rmdir(dist) # Delete dir with prev compile file
+            os.rmdir('\\dist') # Delete dir with prev compile file
         except:
             pass
         new_name = NAME + version # Making a name
         # Send command to compile to cmd
-        eval("os.system('pyinstaller -n' + new_name + flags + ' ' + file_name)")
+        eval("os.system('pyinstaller -n' + new_name + ' ' + flags + ' ' + file_name)")
         prev_version = version
