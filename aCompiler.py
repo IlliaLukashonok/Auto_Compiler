@@ -2,11 +2,12 @@ import os
 import re
 import time
 
-VER = '0.7.0'
+VERSION = '1.2.0'
 
 def vr(line):
     version = line.split("'")
     return version[1]
+
 
 def take_version(file):
     '''This def take version from programm'''
@@ -26,7 +27,7 @@ prev_version = '0.1.0'
 i = 1
 
 while i:
-    time.sleep(60) # Delay
+    #time.sleep(60) # Delay
     while i:
         try: # Safety device if we can't use a file
             file = open(file_name, "r") # Open file
@@ -43,5 +44,5 @@ while i:
             pass
         new_name = NAME + version # Making a name
         # Send command to compile to cmd
-        eval("os.system('pyinstaller -n' + new_name + ' ' + flags + ' ' + file_name)")
+        exec("os.system('pyinstaller -n' + new_name + ' ' + flags + ' ' + file_name)")
         prev_version = version
