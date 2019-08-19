@@ -41,7 +41,7 @@ while i:
             os.rmdir(dist) # Delete dir with prev compile file
         except:
             pass
-        new_name = NAME + version # Making a name
+        new_name = NAME + ' ' + version # Making a name
         # Send command to compile to cmd
         eval("os.system('pyinstaller -n' + new_name + flags + ' ' + file_name)")
         prev_version = version
