@@ -2,7 +2,7 @@ import os
 import re
 import time
 
-VER = '0.7.0'
+VER = '1.2.0'
 
 def vr(line):
     version = line.split("'")
@@ -45,5 +45,5 @@ if __name__ == "__main__":
                 pass
             new_name = NAME + ' ' + version # Making a name
             # Send command to compile to cmd
-            eval("os.system('pyinstaller -n' + new_name + flags + ' ' + file_name)")
+            eval("os.system('pyinstaller ' + flags + ' -n ' + new_name + ' ' + file_name)")
             prev_version = version
